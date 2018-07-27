@@ -1,0 +1,69 @@
+{
+  "name": "generator-reaction",
+  "version": "0.0.1",
+  "description": "Yeoman generator for the reaction framework",
+  "keywords": [
+    "yeoman-generator",
+    "generator",
+    "yo",
+    "yeoman"
+  ],
+  "main": "generators/app/index.js",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "build": "npm run clean && babel src -d generators/app",
+    "clean": "rm -rf demo generators/*/*.js",
+    "link": "npm link && npm link generator-reaction",
+    "lint": "eslint ./",
+    "lint:fix": "eslint --fix ./",
+    "prepublish": "npm run build",
+    "start": "npm run clean && npm run lint && npm run build && yo --destination=demo reaction",
+    "unlink": "npm unlink generator-reaction"
+  },
+  "dependencies": {
+    "generator-github-project": "^0.2.6",
+    "idempotent-babel-polyfill": "0.0.3",
+    "lodash": "^4.17.4",
+    "yeoman-generator": "^1.0.0",
+    "yo-base-prompts": "^0.1.5",
+    "yo-option-or-prompt": "^0.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "yo": "^2.0.0"
+  },
+  "author": {
+    "name": "Jam Risser",
+    "email": "jam@codejam.ninja",
+    "url": "https://codejam.ninja"
+  },
+  "homepage": "https://github.com/codejamninja/generator-reaction",
+  "license": "MIT",
+  "repository": "https://github.com/codejamninja/generator-reaction",
+  "eslintIgnore": [
+    "generators",
+    "demo"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "4"
+          }
+        }
+      ],
+      "stage-2"
+    ]
+  }
+}
