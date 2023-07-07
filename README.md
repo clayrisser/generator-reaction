@@ -4,6 +4,8 @@
 
 > Yeoman generator for the reaction framework
 
+![](assets/generator-reaction.png)
+
 Please ★ this repo if you found it useful ★ ★ ★
 
 
